@@ -3,10 +3,10 @@ import os
 
 
 def logger(message):
-    time = datetime.datetime.now().strftime("%d.%m.%y/%H:%M")
+    time = datetime.datetime.now().strftime("%d.%m.%y;%H:%M")
     message = time + ";" + message
     print(message)
-    f = open("log.txt", "a+")
+    f = open("log.csv", "a+")
     f.write(message + "\n")
     f.flush()
     os.fsync(f.fileno())
